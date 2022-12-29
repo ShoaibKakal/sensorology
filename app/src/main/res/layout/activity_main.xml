@@ -7,7 +7,7 @@
     android:padding="16dp"
     android:background="#F6F5F5"
     android:scrollbarSize="0dp"
-    tools:context=".MainActivity">
+    tools:context=".presentation.activity.MainActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView

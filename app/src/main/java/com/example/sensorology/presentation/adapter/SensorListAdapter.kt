@@ -1,4 +1,4 @@
-package com.example.sensorology.presentation.adapters
+package com.example.sensorology.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.sensorology.R
 import com.example.sensorology.data.SensorModel
+import com.example.sensorology.data.utils.OnClick
 
-class SensorListAdapter(val sensors: List<SensorModel>) : Adapter<SensorListAdapter.SensorVH>() {
+class SensorListAdapter(val sensors: List<SensorModel>, val onClick: OnClick) :
+    Adapter<SensorListAdapter.SensorVH>() {
     class SensorVH(view: View) : ViewHolder(view) {
 
         val imageView = view.findViewById<ImageView>(R.id.image)
@@ -27,6 +29,10 @@ class SensorListAdapter(val sensors: List<SensorModel>) : Adapter<SensorListAdap
         val sensor = sensors[position]
         holder.name.text = sensor.name
         holder.imageView.setImageResource(sensor.image)
+
+        holder.imageView.rootView.setOnClickListener {
+            onClick.onSensorClicked(sensor)
+        }
 
     }
 

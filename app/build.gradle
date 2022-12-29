@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.example.sensorology'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.sensorology"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -48,5 +48,14 @@ dependencies {
 
     // To draw Graphs
     implementation "com.jjoe64:graphview:4.2.2"
+    // For ViewModelScope
+    implementation"androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    // For LifeCycleScope
+    implementation"androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+    // LiveData
+    implementation"androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
+    // To use viewModels delegate
+    implementation "androidx.activity:activity-ktx:1.6.1"
+
 
 }

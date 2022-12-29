@@ -3,7 +3,7 @@ package com.example.sensorology.data
 import androidx.annotation.DrawableRes
 import com.example.sensorology.R
 
-data class SensorModel(@DrawableRes val image: Int, val name: String)
+data class SensorModel(@DrawableRes val image: Int, val name: String) : java.io.Serializable
 
 val sensors = listOf(
     SensorModel(R.drawable.accelerometer, "Accelerometer"),

@@ -1,4 +1,4 @@
-package com.example.sensorology
+package com.example.sensorology.data.utils
 
 
 public enum class SENSOR {
