@@ -60,6 +60,8 @@ class SensorDetailActivity : AppCompatActivity() {
         yAxisGraph.setupGraph()
         zAxisGraph.setupGraph()
         xAxisGraph.graphView.gridLabelRenderer.verticalAxisTitle = sensorModel.measurementUnit
+        yAxisGraph.graphView.gridLabelRenderer.verticalAxisTitle = sensorModel.measurementUnit
+        zAxisGraph.graphView.gridLabelRenderer.verticalAxisTitle = sensorModel.measurementUnit
 
 
         if (isSensorAvailable(sensorModel.sensorType)) {
