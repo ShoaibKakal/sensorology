@@ -25,6 +25,15 @@ class SensorViewModel(private val sensorRepo: SensorRepo) : ViewModel() {
         }
     }
 
+    fun unregisterSensor() {
+        sensorRepo.unregisterSensor()
+    }
+
+    fun registerSensor() {
+        sensorRepo.registerSensor()
+    }
+
+
     class Factory(
         private val sensorRepo: SensorRepo,
     ) :

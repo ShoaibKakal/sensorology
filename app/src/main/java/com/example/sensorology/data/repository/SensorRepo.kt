@@ -20,13 +20,17 @@ class SensorRepo(private val sensorManager: SensorManager?) : SensorEventListene
         try {
             sensor = sensorManager?.getDefaultSensor(sensorType)
             sensorManager?.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL)
-            if (sensor == null) {
-                Log.d(TAG, "setupSensor: Sensor Not Found")
-            }
         } catch (e: Exception) {
             Log.d(TAG, "setupSensor: ${e.message}")
         }
+    }
 
+    fun unregisterSensor() {
+        sensorManager?.unregisterListener(this)
+    }
+
+    fun registerSensor() {
+        sensorManager?.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL)
     }
 
 

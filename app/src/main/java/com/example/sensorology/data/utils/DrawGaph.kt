@@ -17,6 +17,9 @@ class DrawGraph(val graphView: GraphView) {
         viewPort.isXAxisBoundsManual = true
         graphView.addSeries(series)
 
+        graphView.gridLabelRenderer.verticalAxisTitleTextSize = 24.0f
+        graphView.gridLabelRenderer.textSize = 24.0f
+
         //set manual X bounds
         graphView.viewport.apply {
             isYAxisBoundsManual = true

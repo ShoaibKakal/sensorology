@@ -4,59 +4,206 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:orientation="vertical"
     tools:context=".presentation.activity.SensorDetailActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/app_bar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/image_info"
+                android:layout_width="22sp"
+                android:layout_height="22sp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/ic_info"
+                app:tint="@color/colorSecondary" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_control"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/colorPrimaryVariant"
+                android:includeFontPadding="false"
+                android:padding="6dp"
+                android:text="Stop"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_sensor_not_found"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="200dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:src="@drawable/img_not_found" />
+
+            <TextView
+                android:id="@+id/tv_sensor_not_found"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sensor_not_found"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
         <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:justificationMode="inter_word"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/x_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:text="Acceleration Along X-Axis"
-            android:textStyle="bold" />
-
-        <com.jjoe64.graphview.GraphView
-            android:id="@+id/x_graph"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
             android:layout_margin="10dp"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/colorSecondary"
+            app:cardCornerRadius="12dp"
+            app:contentPadding="8dp">
 
-        <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/x_graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:backgroundTint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/x_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Acceleration force along the x axis (including gravity)."
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/y_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:text="Acceleration Along Y-Axis"
-            android:textStyle="bold" />
-
-        <com.jjoe64.graphview.GraphView
-            android:id="@+id/y_graph"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
             android:layout_margin="10dp"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/colorSecondary"
 
-        <TextView
+            app:cardCornerRadius="12dp"
+            app:contentPadding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/y_graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:backgroundTint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/y_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Acceleration force along the x axis (including gravity)."
+                    android:textAlignment="center"
+
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/z_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:text="Acceleration Along Z-Axis"
-            android:textStyle="bold" />
-
-        <com.jjoe64.graphview.GraphView
-            android:id="@+id/z_graph"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
             android:layout_margin="10dp"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/colorSecondary"
+            app:cardCornerRadius="12dp"
+            app:contentPadding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/z_graph"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:backgroundTint="@color/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/z_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Acceleration force along the x axis (including gravity)."
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
+
 </ScrollView>
+
