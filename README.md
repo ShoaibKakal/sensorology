@@ -1,5 +1,7 @@
 # Sensorology
 Sensorology allows users to view and interact with the various sensors on their device, utilizing GraphView to display the sensor data in real-time.
+
+
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/shoaibkakal) 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/shoaibkakal)
 
@@ -12,7 +14,6 @@ Sensorology allows users to view and interact with the various sensors on their 
 
 <p align="center">
 <Img src="app/src/main/res/drawable/screenshot_1.png" height="500" />
-<Img src="app/src/main/res/drawable/screenshot_2.png" height="500"/>
 <Img src="app/src/main/res/drawable/screenshot_4.png" height="500"/>
 <Img src="app/src/main/res/drawable/screenshot_3.png" height="500"/>
 </p>
