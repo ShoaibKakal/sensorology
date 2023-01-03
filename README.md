@@ -1,5 +1,5 @@
 # Sensorology
-Sensorology allows users to view and interact with the various sensors on their device, utilizing GraphView to display the sensor data in real-time.
+Sensorology allows users to view and interact with the various sensors on their device, utilizing GraphView to display the sensor data in real-time...
 
 
 
